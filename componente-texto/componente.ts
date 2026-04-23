@@ -1,13 +1,17 @@
-import { Component, Input } from '@angular/core';
+// info-banner.component.ts
+
+import { Component, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { InfoBannerConfig } from './info-banner.model';
 
 @Component({
-  selector: 'app-promo-header',
-  templateUrl: './promo-header.component.html',
-  styleUrls: ['./promo-header.component.css'] // o .scss
+  selector: 'app-info-banner',
+  standalone: true,
+  imports: [CommonModule], 
+  templateUrl: './info-banner.component.html',
+  styleUrls: ['./info-banner.component.css']
 })
-export class PromoHeaderComponent {
-  // Con @Input() le decimos a Angular que estos valores vendrán de fuera
-  @Input() overline: string = '';
-  @Input() title: string = '';
-  @Input() description: string = '';
+export class InfoBannerComponent {
+  
+  config = input.required<InfoBannerConfig>();
 }

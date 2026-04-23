@@ -1,15 +1,23 @@
-<div class="promo-header">
-  
-  <h3 *ngIf="overline" class="overline-text">
-    {{ overline }}
-  </h3>
+<section class="info-banner" [ngSwitch]="config().showMode">
 
-  <h2 *ngIf="title" class="main-title">
-    {{ title }}
-  </h2>
+  <ng-container *ngSwitchCase="'full'">
+    <ng-container *ngTemplateOutlet="templateCompleto"></ng-container>
+  </ng-container>
 
-  <p *ngIf="description" class="description-text">
-    {{ description }}
-  </p>
+  <ng-container *ngSwitchCase="'simple'">
+    <ng-container *ngTemplateOutlet="templateSimple"></ng-container>
+  </ng-container>
 
-</div>
+</section>
+
+
+<ng-template #templateCompleto>
+  <h2 class="header-uppercase">{{ config().overline }}</h2>
+  <h3 class="header-1">{{ config().title }}</h3>
+  <p class="header-s" *ngIf="config().description">{{ config().description }}</p>
+</ng-template>
+
+<ng-template #templateSimple>
+  <h3 class="header-1">{{ config().title }}</h3>
+  <p class="header-s" *ngIf="config().description">{{ config().description }}</p>
+</ng-template>
