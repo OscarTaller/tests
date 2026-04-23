@@ -1,3 +1,35 @@
+.promo-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px; /* Para que el texto no sea infinito de lado a lado */
+  font-family: sans-serif;
+}
+
+.overline-text {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+
+.main-title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  color: #000;
+}
+
+.description-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  color: #555;
+}
+
 .section-header {
   display: flex;
   flex-direction: column;
