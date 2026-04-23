@@ -47,6 +47,27 @@
   left: 0;
 }
 
+.is-bold {
+  font-weight: 700;
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+.legal-notes-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.legal-notes-list a.is-underline {
+  text-decoration: underline;
+}
+
+.legal-notes-list a:hover {
+  color: #337f37;
+}
+
 @media (max-width: 992px) {
   .b-section.notas {
     padding: 16px 20px;
