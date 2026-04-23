@@ -1,0 +1,19 @@
+<section class="b-section dvContentBlock notas">
+  <ol class="legal-notes-list">
+    @for (note of notes(); track $index) {
+      <li class="legal-notes-item">
+        @for (paragraph of note.paragraphs; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+
+        @if (note.bullets?.length) {
+          <ul class="legal-notes-bullets">
+            @for (bullet of note.bullets; track $index) {
+              <li>{{ bullet }}</li>
+            }
+          </ul>
+        }
+      </li>
+    }
+  </ol>
+</section>
