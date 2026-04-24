@@ -1,0 +1,229 @@
+:host {
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.slide-ahorro {
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.slide-ahorro .content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.slide-ahorro .text-column {
+  flex: 1;
+}
+
+.slide-ahorro .subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 15px;
+  font-family: sans-serif;
+}
+
+.slide-ahorro .title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111;
+  margin: 0 0 30px 0;
+  font-family: sans-serif;
+}
+
+.slide-ahorro .title u {
+  text-decoration: underline;
+}
+
+/* Lista de beneficios */
+.slide-ahorro .benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.slide-ahorro .benefits-list li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 12px;
+  font-family: sans-serif;
+}
+
+.slide-ahorro .check-icon {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-verde-cetelem);
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Check blanco dentro del círculo verde */
+.slide-ahorro .check-icon::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Badge Gris "Solo nuevos clientes" */
+.slide-ahorro .info-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+}
+
+.slide-ahorro .info-icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.slide-ahorro .btn-primary {
+  display: inline-block;
+  background-color: #3A913F;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+/* Columna Imagen y Banner de Riesgo */
+.slide-ahorro .image-column {
+  flex: 1;
+  height: 550px;
+  background-image: url('/img/Imagen-Slider-Depositos2.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-ahorro .risk-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #ccc;
+  font-family: sans-serif;
+}
+
+.slide-ahorro .risk-header {
+  padding: 8px 15px;
+  font-size: 11px;
+  border-bottom: 1px solid #ddd;
+}
+
+.slide-ahorro .risk-body {
+  display: flex;
+  padding: 10px 15px;
+}
+
+.slide-ahorro .risk-score {
+  flex: 0 0 40%;
+  font-size: 11px;
+  border-right: 1px solid #ddd;
+  padding-right: 10px;
+}
+
+.slide-ahorro .risk-score strong {
+  font-size: 24px;
+}
+
+.slide-ahorro .risk-legal {
+  flex: 1;
+  font-size: 10px;
+  padding-left: 10px;
+  line-height: 1.3;
+}
+
+@media (max-width: 992px) {
+  .slide-ahorro {
+    padding: 24px;
+  }
+
+  .slide-ahorro .content-container {
+    flex-direction: column;
+    text-align: left;
+    gap: 24px;
+  }
+
+  .slide-ahorro .image-column {
+    order: -1;
+    width: 100%;
+    height: 280px;
+    border-radius: 16px;
+  }
+
+  .slide-ahorro .title {
+    font-size: 36px;
+    line-height: 1.15;
+    margin: 0 0 20px 0;
+  }
+
+  .slide-ahorro .benefits-list li {
+    justify-content: flex-start;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .slide-ahorro .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide-ahorro {
+    padding: 16px;
+  }
+
+  .slide-ahorro .title {
+    font-size: 28px;
+  }
+
+  .slide-ahorro .image-column {
+    height: 220px;
+  }
+
+  .slide-ahorro .risk-score strong {
+    font-size: 20px;
+  }
+}

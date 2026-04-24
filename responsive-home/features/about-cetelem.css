@@ -1,0 +1,100 @@
+.section-b {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 80px;
+}
+
+.b-section {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.b-about-cetelem-image{
+  margin: 0 0 80px;
+  border-radius: 8px;
+  width: 1120px;
+  max-width: 100%;
+  vertical-align: middle;
+  align-self: center;
+}
+
+.features-headlines {
+  margin: 0 80px 0 0;
+  max-width: 400px;
+}
+
+.pretitle {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 0 8px;
+    padding: 0;
+    color: #111;
+    font-weight: 400;
+}
+
+.title {
+  font-size: 48px;
+  line-height: 52px;
+  margin: 0 auto 16px;
+  color: #111;
+  padding: 0;
+}
+
+.features-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 120px;
+  -moz-column-gap: 120px;
+  column-gap: 120px;
+  row-gap: 64px;
+  width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .b-section {
+    padding: 40px 24px;
+  }
+
+  .section-b {
+    flex-direction: column;
+    padding: 0;
+    gap: 1.5rem;
+  }
+
+  .b-about-cetelem-image {
+    width: 100%;
+    margin: 0 0 24px;
+  }
+
+  .features-headlines {
+    margin: 0 0 16px 0;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 32px;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .b-section {
+    padding: 32px 16px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}

@@ -1,0 +1,36 @@
+.btn-primary {
+  color: #FFF;
+  background-color: var(--color-verde-cetelem);
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 24px;
+  text-align: center;
+  border-radius: 56px;
+  border: 0;
+  font-weight: 700;
+  font-size: 16px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  min-width: 200px;
+}
+
+@media (max-width: 1024px) {
+  .btn-primary {
+    margin-top: 24px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+    line-height: 52px;
+  }
+}
