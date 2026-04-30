@@ -1,0 +1,21 @@
+<section class="cta-banner">
+  <div class="cta-image-wrapper">
+    <div class="cta-image-placeholder" aria-hidden="true">
+      <!-- PLACEHOLDER imagen tablet -->
+      <span class="icon-placeholder">[imagen tablet]</span>
+    </div>
+  </div>
+
+  <div class="cta-content">
+    <h2 class="cta-title">{{ data().title }}</h2>
+    <p class="cta-description">{{ data().description }}</p>
+
+    <a [href]="data().buttonUrl" class="cta-button" [attr.aria-label]="data().buttonText">
+      <span>{{ data().buttonText }}</span>
+      <span class="cta-arrow" aria-hidden="true">
+        <!-- PLACEHOLDER icono flecha -->
+        ↑
+      </span>
+    </a>
+  </div>
+</section>

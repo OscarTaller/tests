@@ -26,6 +26,10 @@ export const routes: Routes = [
       {
         path: 'gobierno-corporativo',
         loadChildren: () => import('./features/gobierno-corporativo/gobierno-corporativo.routes').then(m => m.GobiernoCorporativoRoutes)
+      },
+      {
+        path: 'concesionarios',
+        loadChildren: () => import('./features/concesionarios/concesionarios.routes').then(m => m.ConcesionariosRoutes)
       }
     ]
   },

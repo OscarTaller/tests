@@ -1,0 +1,26 @@
+<nav class="breadcrumbs" aria-label="Migas de pan">
+  <ol class="breadcrumbs-list">
+    @for (item of items(); track item.label; let last = $last; let first = $first) {
+      <li class="breadcrumbs-item">
+        @if (first) {
+          <span class="home-icon" aria-hidden="true">
+            <!-- PLACEHOLDER icono home -->
+            [home]
+          </span>
+        }
+
+        @if (item.url && !last) {
+          <a class="breadcrumbs-link" [href]="item.url">{{ item.label }}</a>
+        } @else {
+          <span class="breadcrumbs-current" [attr.aria-current]="last ? 'page' : null">
+            {{ item.label }}
+          </span>
+        }
+
+        @if (!last) {
+          <span class="breadcrumbs-separator" aria-hidden="true">\</span>
+        }
+      </li>
+    }
+  </ol>
+</nav>

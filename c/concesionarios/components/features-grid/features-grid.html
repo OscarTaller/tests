@@ -1,0 +1,9 @@
+<section class="features-grid">
+  @for (item of features(); track item.title) {
+    <app-concesionarios-feature-item
+      [icon]="item.icon"
+      [title]="item.title"
+      [description]="item.description"
+    />
+  }
+</section>

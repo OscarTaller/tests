@@ -1,0 +1,7 @@
+<section class="description">
+  @for (item of paragraphs(); track $index) {
+    <p class="description-paragraph">
+      {{ item.text }}@if (item.bold) {<strong>{{ item.bold }}</strong>}
+    </p>
+  }
+</section>
