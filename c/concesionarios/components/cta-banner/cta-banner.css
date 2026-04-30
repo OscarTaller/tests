@@ -64,11 +64,16 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.cta-button:hover,
+.cta-button:hover {
+  background-color: #fff;
+  color: var(--color-verde-cetelem, #337f37);
+}
+
 .cta-button:focus-visible {
   background-color: #fff;
   color: var(--color-verde-cetelem, #337f37);
-  outline: none;
+  outline: 3px solid #ffd54a;
+  outline-offset: 3px;
 }
 
 .cta-arrow {
@@ -116,5 +121,18 @@
   .cta-button {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .cta-button {
+    border-color: #fff;
+    background-color: #000;
   }
 }

@@ -1,16 +1,29 @@
-<section class="cta-banner">
+<section
+  class="cta-banner"
+  aria-labelledby="cta-title"
+  role="region"
+>
   <div class="cta-image-wrapper">
-    <div class="cta-image-placeholder" aria-hidden="true">
+    <div
+      class="cta-image-placeholder"
+      role="img"
+      aria-label="Tablet mostrando la aplicación de gestión de operaciones"
+    >
+      <span class="icon-placeholder" aria-hidden="true">[imagen tablet]</span>
       <!-- PLACEHOLDER imagen tablet -->
-      <span class="icon-placeholder">[imagen tablet]</span>
     </div>
   </div>
 
   <div class="cta-content">
-    <h2 class="cta-title">{{ data().title }}</h2>
-    <p class="cta-description">{{ data().description }}</p>
+    <h2 class="cta-title" id="cta-title">{{ data().title }}</h2>
+    <p class="cta-description" id="cta-description">{{ data().description }}</p>
 
-    <a [href]="data().buttonUrl" class="cta-button" [attr.aria-label]="data().buttonText">
+    <a
+      [href]="data().buttonUrl"
+      class="cta-button"
+      [attr.aria-label]="data().buttonText + ' la aplicación para concesionarios'"
+      aria-describedby="cta-description"
+    >
       <span>{{ data().buttonText }}</span>
       <span class="cta-arrow" aria-hidden="true">
         <!-- PLACEHOLDER icono flecha -->

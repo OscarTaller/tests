@@ -1,11 +1,20 @@
-<article class="feature-item">
-  <div class="feature-icon" aria-hidden="true">
+<article
+  class="feature-item"
+  [attr.aria-labelledby]="'feature-' + icon() + '-title'"
+>
+  <div
+    class="feature-icon"
+    role="img"
+    [attr.aria-label]="title()"
+  >
+    <span class="icon-placeholder" aria-hidden="true">[{{ icon() }}]</span>
     <!-- PLACEHOLDER icono {{ icon() }} -->
-    <span class="icon-placeholder">[{{ icon() }}]</span>
   </div>
 
   <div class="feature-content">
-    <h3 class="feature-title">{{ title() }}</h3>
+    <h3 class="feature-title" [id]="'feature-' + icon() + '-title'">
+      {{ title() }}
+    </h3>
     <p class="feature-description">{{ description() }}</p>
   </div>
 </article>

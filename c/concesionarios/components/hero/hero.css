@@ -94,11 +94,16 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.hero-cta:hover,
+.hero-cta:hover {
+  background-color: #fff;
+  color: #111;
+}
+
 .hero-cta:focus-visible {
   background-color: #fff;
   color: #111;
-  outline: none;
+  outline: 3px solid #ffd54a;
+  outline-offset: 3px;
 }
 
 /* ----- Panel login ----- */
@@ -171,6 +176,16 @@
   border-color: var(--color-verde-cetelem, #337f37);
 }
 
+.login-input:focus-visible {
+  outline: 3px solid #ffd54a;
+  outline-offset: 1px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
 .login-button {
   margin-top: 16px;
   align-self: flex-end;
@@ -188,10 +203,14 @@
   font-family: inherit;
 }
 
-.login-button:hover,
+.login-button:hover {
+  background-color: #235726;
+}
+
 .login-button:focus-visible {
   background-color: #235726;
-  outline: none;
+  outline: 3px solid #ffd54a;
+  outline-offset: 3px;
 }
 
 .visually-hidden {
@@ -266,5 +285,23 @@
 
   .hero-login {
     padding: 24px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta,
+  .login-input,
+  .login-button {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .login-input {
+    border-color: #000;
+  }
+  .hero-cta,
+  .login-button {
+    outline: 1px solid #000;
   }
 }

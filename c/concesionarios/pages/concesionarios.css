@@ -2,3 +2,32 @@
   display: block;
   width: 100%;
 }
+
+.concesionarios-page {
+  outline: none;
+}
+
+.concesionarios-page:focus-visible {
+  outline: 3px solid #ffd54a;
+  outline-offset: -3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 16px;
+  background-color: var(--color-verde-cetelem, #337f37);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+  outline: 3px solid #ffd54a;
+  outline-offset: 2px;
+}
