@@ -1,0 +1,38 @@
+<div class="portlet-body">
+  <div *ngFor="let seccion of data" class="clearfix journal-content-article">
+    <details>
+      <summary>
+        <p class="pQuestion"><span>{{ seccion.titulo }}</span></p>
+        <svg class="chevron-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+      </summary>
+      
+      <div class="dvAnswer">
+        <ul *ngIf="seccion.items">
+          <li *ngFor="let item of seccion.items" style="border-left-width: 20px; margin-left: 20px; margin-top: 10px;">
+            <a [href]="item.url"><strong>{{ item.label }}</strong></a> (enlace a documento PDF)
+          </li>
+          <li *ngIf="seccion.textoExtra" style="border-left-width: 20px; margin-left: 20px; margin-top: 10px;">
+            {{ seccion.textoExtra }}
+          </li>
+        </ul>
+
+        <div *ngFor="let sub of seccion.subgrupos" style="margin-top: 15px;">
+          <p style="font-weight: 600;">{{ sub.nombre }}</p>
+          <ul>
+            <li *ngFor="let item of sub.items" style="border-left-width: 20px; margin-left: 20px; margin-top: 10px;">
+              <a [href]="item.url"><strong>{{ item.label }}</strong></a> (enlace a documento PDF)
+            </li>
+            <li *ngIf="sub.notaAdicional" style="border-left-width: 20px; margin-left: 20px; margin-top: 10px;">
+              {{ sub.notaAdicional }}
+              <ul style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px;">
+                <li *ngFor="let anio of sub.años" style="list-style: none;">
+                  <a [href]="anio.url"><strong>{{ anio.año }}</strong></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>

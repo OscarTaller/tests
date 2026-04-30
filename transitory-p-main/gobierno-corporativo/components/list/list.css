@@ -1,0 +1,118 @@
+/* Contenedor principal */
+.portlet-body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+/* Acordeón */
+.acordeon-seccion {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.resumen-acordeon {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.resumen-acordeon::-webkit-details-marker {
+  display: none;
+}
+
+.pQuestion {
+  font-weight: 700;
+  color: #333;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+/* Icono Chevron */
+.chevron-icon {
+  width: 24px;
+  height: 24px;
+  fill: #3a913f; /* Verde corporativo */
+  transition: transform 0.2s ease;
+}
+
+details[open] .chevron-icon {
+  transform: rotate(180deg);
+}
+
+/* Contenido desplegado */
+.dvAnswer {
+  padding: 10px 0 30px 0;
+}
+
+/* Listas de documentos generales */
+.lista-documentos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-documentos li {
+  margin-left: 20px;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* El bullet verde personalizado */
+.lista-documentos li::before {
+  content: "•";
+  color: #3a913f;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Subgrupos */
+.subgrupo-contenedor {
+  margin-top: 20px;
+}
+
+.subgrupo-titulo {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+/* Enlaces */
+.dvAnswer a {
+  color: #007333; /* Verde oscuro para accesibilidad (Contraste AA) */
+  text-decoration: none;
+}
+
+.dvAnswer a:hover {
+  text-decoration: underline;
+}
+
+.texto-enlace {
+  font-size: 0.95rem;
+  color: #666;
+  margin-left: 4px;
+}
+
+/* LISTA DE AÑOS (Estilo imagen solicitada) */
+.lista-anios {
+  list-style-type: circle; /* Circulito hueco */
+  margin-top: 15px;
+  padding-left: 25px; /* Sangría para los años */
+}
+
+.lista-anios li {
+  margin-bottom: 10px;
+  display: list-item; /* Comportamiento de lista vertical */
+}
+
+.lista-anios li::before {
+  content: none; /* Quitamos el bullet de punto sólido de la lista padre */
+}
+
+/* Ítems especiales */
+.item-texto-extra, .item-nota-adicional {
+  margin-top: 15px;
+}

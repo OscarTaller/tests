@@ -1,0 +1,70 @@
+<div class="portlet-body">
+  @for (seccion of secciones; track seccion.titulo) {
+    <div class="clearfix journal-content-article">
+      <details class="acordeon-seccion">
+        <summary class="resumen-acordeon">
+          <p class="pQuestion"><span>{{ seccion.titulo }}</span></p>
+          <svg class="chevron-icon" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </summary>
+        
+        <div class="dvAnswer">
+          @if (seccion.items) {
+            <ul class="lista-documentos">
+              @for (item of seccion.items; track item.label) {
+                <li>
+                  <a [href]="item.url" 
+                     [attr.aria-label]="'Descargar ' + item.label + ' en formato PDF'">
+                    <strong>{{ item.label }}</strong>
+                  </a> 
+                  <span class="texto-enlace">(enlace a documento PDF)</span>
+                </li>
+              }
+              @if (seccion.textoExtra) {
+                <li class="item-texto-extra">
+                  <u><strong>{{ seccion.textoExtra }}</strong></u>
+                </li>
+              }
+            </ul>
+          }
+
+          @for (sub of seccion.subgrupos; track sub.nombre) {
+            <div class="subgrupo-contenedor">
+              <p class="subgrupo-titulo">{{ sub.nombre }}</p>
+              <ul class="lista-documentos">
+                @for (item of sub.items; track item.label) {
+                  <li>
+                    <a [href]="item.url" 
+                       [attr.aria-label]="'Descargar ' + item.label + ' en formato PDF'">
+                      <strong>{{ item.label }}</strong>
+                    </a> 
+                    <span class="texto-enlace">(enlace a documento PDF)</span>
+                  </li>
+                }
+                
+                @if (sub.notaAdicional) {
+                  <li class="item-nota-adicional">
+                    <p>{{ sub.notaAdicional }}</p>
+                    <ul class="lista-anios">
+                      @for (anio of sub.anios; track anio.anio) {
+                        <li>
+                          <a [href]="anio.url" 
+                             [attr.aria-label]="'Descargar informe de políticas de remuneraciones año ' + anio.anio"
+                             target="_blank" 
+                             rel="noopener noreferrer">
+                            <strong>{{ anio.anio }}</strong>
+                          </a>
+                        </li>
+                      }
+                    </ul>
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </details>
+    </div>
+  }
+</div>
