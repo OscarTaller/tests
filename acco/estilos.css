@@ -1,0 +1,106 @@
+.accordion-wrapper {
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+
+  /* --- VARIACIONES DE DISEÑO --- */
+  
+  &.variant-card {
+    background-color: #f0f4f1; 
+    border-radius: 8px;
+    padding: 0 16px;
+  }
+
+  &.variant-list {
+    background-color: transparent;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 8px;
+  }
+
+  /* --- RESPONSIVIDAD DRIVEN BY SIGNALS --- */
+  
+  &.is-desktop {
+    .accordion-title {
+      font-size: 16px;
+    }
+  }
+
+  &.is-mobile {
+    .accordion-title {
+      font-size: 14px;
+    }
+  }
+
+  /* --- HEADER Y BOTÓN --- */
+
+  .accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-family: inherit;
+    outline: none;
+  }
+
+  .accordion-title {
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    svg {
+      color: #333;
+    }
+  }
+
+  /* --- CUERPO ANIMADO (TRUCO CON CSS GRID) --- */
+
+  .accordion-body {
+    display: grid;
+    grid-template-rows: 0fr; 
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    .accordion-content {
+      overflow: hidden;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+      padding-bottom: 0;
+      transition: padding-bottom 0.3s ease;
+
+      p {
+        margin: 0; 
+      }
+    }
+  }
+
+  /* --- ESTADO ABIERTO --- */
+  
+  &.is-open {
+    .accordion-icon {
+      transform: rotate(45deg); 
+    }
+
+    .accordion-body {
+      grid-template-rows: 1fr; 
+      
+      .accordion-content {
+        padding-bottom: 16px; 
+      }
+    }
+    
+    &.variant-list {
+      border-bottom-color: transparent; 
+    }
+  }
+}
