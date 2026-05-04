@@ -1,0 +1,31 @@
+<div class="timeline-container">
+  <div class="timeline-row">
+    <div class="timeline-left-col">
+      <div class="timeline-dot"></div>
+      @if (data().showLine) {
+        <div class="timeline-line"></div>
+      }
+    </div>
+
+    <div class="timeline-right-col">
+      <div class="timeline-header">
+        <span class="timeline-number">{{ data().number }}</span>
+        <h3 class="timeline-title">{{ data().title }}</h3>
+      </div>
+      
+      <p class="timeline-paragraph">{{ data().paragraph }}</p>
+
+      @if (data().showMessageBox) {
+        <div class="timeline-message-box">
+          {{ data().message }}
+        </div>
+      }
+
+      @if (data().showButton) {
+        <button class="timeline-button">
+          {{ data().buttonText }}
+        </button>
+      }
+    </div>
+  </div>
+</div>
