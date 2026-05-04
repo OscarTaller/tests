@@ -1,0 +1,27 @@
+<div class="field-container" [class.error]="hasError()" [class.disabled]="disabled()">
+  @if (label()) {
+    <label [for]="inputId()">{{ label() }}</label>
+  }
+  
+  <input
+    [id]="inputId()"
+    [type]="type()"
+    [value]="value()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [readOnly]="readOnly()"
+    [attr.aria-invalid]="hasError() ? 'true' : 'false'"
+    [attr.aria-describedby]="ariaDescribedBy()"
+    (input)="onInput($event)"
+  />
+
+  @if (hasError() && errorText()) {
+    <span class="message error-text" [id]="inputId() + '-error'" role="alert">
+      {{ errorText() }}
+    </span>
+  } @else if (showHint() && hintText()) {
+    <span class="message hint-text" [id]="inputId() + '-hint'">
+      {{ hintText() }}
+    </span>
+  }
+</div>

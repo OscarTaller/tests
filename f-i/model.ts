@@ -1,0 +1,1 @@
+export type FieldInputType = 'text' | 'date' | 'password' | 'email' | 'search' | 'tel' | 'number';
