@@ -1,0 +1,33 @@
+<div class="timeline-container">
+  @for (item of items(); track $index) {
+    <div class="timeline-row">
+      <div class="timeline-left-col">
+        <div class="timeline-dot"></div>
+        @if (item.showLine) {
+          <div class="timeline-line"></div>
+        }
+      </div>
+
+      <div class="timeline-right-col">
+        <div class="timeline-header">
+          <span class="timeline-number">{{ $index + 1 }}</span>
+          <h3 class="timeline-title">{{ item.title }}</h3>
+        </div>
+        
+        <p class="timeline-paragraph">{{ item.paragraph }}</p>
+
+        @if (item.showMessageBox) {
+          <div class="timeline-message-box">
+            {{ item.message }}
+          </div>
+        }
+
+        @if (item.showButton) {
+          <button class="timeline-button">
+            {{ item.buttonText }}
+          </button>
+        }
+      </div>
+    </div>
+  }
+</div>
