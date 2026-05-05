@@ -2,105 +2,112 @@
   width: 100%;
   transition: all 0.3s ease;
   margin-bottom: 16px;
+}
 
-  /* --- VARIACIONES DE DISEÑO --- */
-  
-  &.variant-card {
-    background-color: #f0f4f1; 
-    border-radius: 8px;
-    padding: 0 16px;
-  }
+/* --- VARIACIONES DE DISEÑO --- */
 
-  &.variant-list {
-    background-color: transparent;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 0 8px;
-  }
+.accordion-wrapper.variant-card {
+  background-color: #f0f4f1; 
+  border-radius: 8px;
+  padding: 0 16px;
+}
 
-  /* --- RESPONSIVIDAD DRIVEN BY SIGNALS --- */
-  
-  &.is-desktop {
-    .accordion-title {
-      font-size: 16px;
-    }
-  }
+.accordion-wrapper.variant-list {
+  background-color: transparent;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 8px;
+}
 
-  &.is-mobile {
-    .accordion-title {
-      font-size: 14px;
-    }
-  }
+/* --- RESPONSIVIDAD DRIVEN BY SIGNALS --- */
 
-  /* --- HEADER Y BOTÓN --- */
+.accordion-wrapper.is-desktop .accordion-title {
+  font-size: 16px;
+}
 
-  .accordion-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 0;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #333;
-    font-family: inherit;
-    outline: none;
-  }
+.accordion-wrapper.is-mobile .accordion-title {
+  font-size: 14px;
+}
 
-  .accordion-title {
-    font-weight: 600;
-    text-align: left;
-  }
+/* --- HEADER Y BOTÓN --- */
 
-  .accordion-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.accordion-wrapper .accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  outline: none;
+}
 
-    svg {
-      color: #333;
-    }
-  }
+.accordion-wrapper .accordion-title {
+  font-weight: 600;
+  text-align: left;
+}
 
-  /* --- CUERPO ANIMADO (TRUCO CON CSS GRID) --- */
+.accordion-wrapper .accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  .accordion-body {
-    display: grid;
-    grid-template-rows: 0fr; 
-    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    .accordion-content {
-      overflow: hidden;
-      color: #666;
-      font-size: 14px;
-      line-height: 1.5;
-      padding-bottom: 0;
-      transition: padding-bottom 0.3s ease;
+.accordion-wrapper .accordion-icon svg {
+  color: #333;
+}
 
-      p {
-        margin: 0; 
-      }
-    }
-  }
+/* --- CUERPO ANIMADO (TRUCO CON CSS GRID) --- */
 
-  /* --- ESTADO ABIERTO --- */
-  
-  &.is-open {
-    .accordion-icon {
-      transform: rotate(45deg); 
-    }
+.accordion-wrapper .accordion-body {
+  display: grid;
+  grid-template-rows: 0fr; 
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    .accordion-body {
-      grid-template-rows: 1fr; 
-      
-      .accordion-content {
-        padding-bottom: 16px; 
-      }
-    }
-    
-    &.variant-list {
-      border-bottom-color: transparent; 
-    }
-  }
+.accordion-wrapper .accordion-body .accordion-content {
+  overflow: hidden;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-bottom: 0;
+  transition: padding-bottom 0.3s ease;
+}
+
+.accordion-wrapper .accordion-body .accordion-content p {
+  margin: 0; 
+}
+
+/* NUEVO: Estilos de la lista adaptados a CSS puro */
+.accordion-wrapper .accordion-body .accordion-content .accordion-list-content {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.accordion-wrapper .accordion-body .accordion-content .accordion-list-content li {
+  margin-bottom: 8px;
+}
+
+.accordion-wrapper .accordion-body .accordion-content .accordion-list-content li:last-child {
+  margin-bottom: 0;
+}
+
+/* --- ESTADO ABIERTO --- */
+
+.accordion-wrapper.is-open .accordion-icon {
+  transform: rotate(45deg); 
+}
+
+.accordion-wrapper.is-open .accordion-body {
+  grid-template-rows: 1fr; 
+}
+
+.accordion-wrapper.is-open .accordion-body .accordion-content {
+  padding-bottom: 16px; 
+}
+
+.accordion-wrapper.is-open.variant-list {
+  border-bottom-color: transparent; 
 }
